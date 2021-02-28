@@ -13,7 +13,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
   if (!(['jpeg', 'png', 'pdf'].includes(fileFormat))) {
     console.log(fileFormat)
-    return res.status(400).json({ error: 'Invalid file format' });
+    return res.status(400).json({ error: 'Invalid file format. Try: "jpeg", "png", or "pdf"'});
   }
 
   const html = generateHtml({ text, fontSize, foreground, background });

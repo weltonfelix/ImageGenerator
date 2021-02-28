@@ -26,7 +26,7 @@ export default function ({ text, fontSize, foreground, background }:generateHtml
           background: #${background};
 
           font-family: 'Open Sans', sans-serif;
-          font-size: ${fontSize || '5em'};
+          font-size: ${fontSize || '80px'};
           color: #${foreground};
 
           text-align: center;
