@@ -1,4 +1,11 @@
-export default function (text, background) {
+interface generateHtmlProps {
+  text: string;
+  fontSize: string;
+  foreground: string;
+  background: string;
+}
+
+export default function ({ text, fontSize, foreground, background }:generateHtmlProps) {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -19,7 +26,10 @@ export default function (text, background) {
           background: #${background};
 
           font-family: 'Open Sans', sans-serif;
-          font-size: 5rem;
+          font-size: ${fontSize || '5em'};
+          color: #${foreground};
+
+          text-align: center;
 
           min-height: 100vh;
         }
@@ -31,14 +41,10 @@ export default function (text, background) {
           align-items: center;
           justify-content: center;
         }
-
-        p {
-          text-align: center;
-        }
       </style>
     </head>
     <body>
-      <p>${text}</p>
+      <p>${text || 'Usage: <br/> <code>?text=your_text</code>'}</p>
     </body>
     </html>
   `
