@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer";
+import { puppeteer } from "chrome-aws-lambda";
 
 export enum fileFormats {
   'jpeg',
